@@ -8,7 +8,7 @@ async function bootstrap() {
   //ruta de donde se debe hacer las peticiones
   
   const corsOptions:CorsOptions = {
-    origin: 'http://localhost:3001', 
+    origin: 'http://localhost:3001'|| process.env.FRONT_URL, 
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',   
     allowedHeaders: ['Content-Type', 'Authorization'],
   };
