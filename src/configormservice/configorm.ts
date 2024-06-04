@@ -12,7 +12,7 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
   createTypeOrmOptions(): TypeOrmModuleOptions {
     return {
       type: 'mysql',
-      host: process.env.DB_HOST,
+      host: process.env.DB_HOST||process.env.PORT,
       port: parseInt(process.env.DB_PORT),
       username: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
