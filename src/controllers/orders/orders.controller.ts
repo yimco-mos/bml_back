@@ -12,30 +12,8 @@ export class OrdersController {
     //crear un pedido usando el service 
     @Post('create_order')
     async createOrder(
-        @Body() createOrderDto: {
-            address: string,
-            description: string,
-            sent_date: Date,
-            receive_date: Date,
-            price: number,
-            receiver_name: string,
-            receiver_identify: string,
-            client_id: string,
-            delivery_id:string
-            
-        }
-    ): Promise<Order> {
-        return this.orderService.createOrder(
-            createOrderDto.address,
-            createOrderDto.description,
-            createOrderDto.sent_date,
-            createOrderDto.receive_date,
-            createOrderDto.price,
-            createOrderDto.receiver_name,
-            createOrderDto.receiver_identify,
-            createOrderDto.client_id,
-            createOrderDto.delivery_id
-        );
+        @Body() orderData:Partial<Order>): Promise<Order> {
+        return this.orderService.createOrder(orderData);
     }
     //obtener todos los pedidos
     @Get('orders')
