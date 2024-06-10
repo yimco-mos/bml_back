@@ -11,7 +11,7 @@ import { Entities } from './entities';
 export class TypeOrmConfigService implements TypeOrmOptionsFactory {
   createTypeOrmOptions(): TypeOrmModuleOptions {
     return {
-      type: 'mysql',
+      type: 'postgres',
       host: process.env.DB_HOST||process.env.PORT,
       port: parseInt(process.env.DB_PORT),
       username: process.env.DB_USER,
