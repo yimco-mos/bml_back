@@ -12,11 +12,7 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
   createTypeOrmOptions(): TypeOrmModuleOptions {
     return {
       type: 'postgres',
-      host: process.env.DB_HOST||process.env.PORT,
-      port: parseInt(process.env.DB_PORT),
-      username: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
+      url:process.env.POSTGRES_PRISMA_URL,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       };
   }
